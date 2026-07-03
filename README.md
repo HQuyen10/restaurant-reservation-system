@@ -16,13 +16,6 @@ Unit Test Backend bằng Pytest
 Unit Test Frontend bằng Jest + jsdom
 Automation Test bằng Playwright
 
-## Thành viên nhóm
-|      Thành viên        |                Vai trò                            |
-|------------------------|---------------------------------------------------|
-| Trần Thanh Ngân        | Admin                                             |
-| Nguyễn Thị Hạnh Quyên  | Restaurant/Customer                               |
-
-
 ## Công nghệ sử dụng
 - Frontend: HTML, CSS, JavaScript
 - Backend: Flask Python, SQLAlchemy, Flask-JWT-Extended
