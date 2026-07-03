@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Harvest | Report</title>
+    <link rel="stylesheet" href="../../static/css/admin.css">
+
+</head>
+<body>
+<header class="admin-header">
+    <div class="header-left">
+        <a href="homepage.html" style="text-decoration: none;">
+            <h1 class="logo">GOLDEN <span>HARVEST</span></h1>
+        </a>
+    </div>
+
+    <div class="header-right">
+        <nav class="admin-nav">
+            <a href="restaurants.html" class="nav-item">Restaurants</a>
+            <a href="cuisine.html" class="nav-item">Cuisine</a>
+            <a href="users.html" class="nav-item">Users</a>
+            <a href="report.html" class="nav-item">Report</a>
+        </nav>
+
+        <button onclick="handleLogout()" class="btn-logout">Đăng xuất</button>
+    </div>
+</header>
+<main class="admin-report-page">
+    <div class="admin-report-shell">
+        <section class="admin-report-hero">
+            <div class="admin-report-kicker">Report Dashboard</div>
+            <h1 class="admin-report-title">Báo cáo doanh thu nhà hàng</h1>
+        </section>
+
+        <section class="admin-report-toolbar">
+            <div class="admin-report-field">
+                <label for="restaurant_id">Nhà hàng</label>
+                <select id="restaurant_id">
+                    <option value="">Đang tải danh sách...</option>
+                </select>
+            </div>
+
+            <div class="admin-report-field">
+                <label for="report_month">Tháng báo cáo</label>
+                <input type="month" id="report_month">
+            </div>
+
+            <div class="admin-report-actions">
+                <button id="loadReportBtn" class="admin-report-button" type="button" onclick="loadReport()">
+                    Xem báo cáo
+                </button>
+            </div>
+        </section>
+
+        <section class="admin-report-summary">
+            <article class="admin-report-card">
+                <div class="admin-report-card-label">Doanh thu tháng chọn</div>
+                <div id="total_report" class="admin-report-card-value">0 VNĐ</div>
+                <div class="admin-report-card-note">Tổng doanh thu theo bộ lọc hiện tại</div>
+            </article>
+
+            <article class="admin-report-card">
+                <div class="admin-report-card-label">Tổng 6 tháng</div>
+                <div id="total_6_months" class="admin-report-card-value">0 VNĐ</div>
+                <div class="admin-report-card-note">Cộng dồn 6 tháng gần nhất</div>
+            </article>
+
+            <article class="admin-report-card">
+                <div class="admin-report-card-label">Số nhà hàng có dữ liệu</div>
+                <div id="restaurant_count" class="admin-report-card-value">0</div>
+                <div class="admin-report-card-note">Bao gồm HotPot và Grill House nếu có phát sinh</div>
+            </article>
+
+            <article class="admin-report-card">
+                <div class="admin-report-card-label">Trạng thái</div>
+                <div id="status_text" class="admin-report-card-value">Sẵn sàng</div>
+                <div id="status_note" class="admin-report-card-note">Chọn tháng và tải báo cáo để xem chi tiết</div>
+            </article>
+        </section>
+
+        <section class="admin-report-table-card">
+            <div class="admin-report-table-header">
+                <div>
+                    <h2>Bảng doanh thu theo tháng</h2>
+                    <p id="table_caption">Hiển thị doanh thu 6 tháng gần nhất của từng nhà hàng.</p>
+                </div>
+                <div id="table_status" class="admin-report-status">Chưa tải dữ liệu</div>
+            </div>
+
+            <div class="admin-report-table-wrap">
+                <table class="admin-report-table">
+                    <thead>
+                    <tr id="report_table_head">
+                        <th>Nhà hàng</th>
+                        <th>Tháng chọn</th>
+                        <th>Tổng 6 tháng</th>
+                    </tr>
+                    </thead>
+                    <tbody id="report_table_body">
+                    <tr>
+                        <td class="admin-report-empty" colspan="3">Chưa có dữ liệu báo cáo để hiển thị.</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script type="module" src="../../static/js/admin_report.js"></script>
+</body>
+</html>

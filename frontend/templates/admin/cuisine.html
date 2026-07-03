@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuisine</title>
+    <link rel="stylesheet" href="../../static/css/admin.css">
+</head>
+<body>
+<header class="admin-header">
+    <div class="header-left">
+        <a href="homepage.html" style="text-decoration: none;">
+            <h1 class="logo">GOLDEN <span>HARVEST</span></h1>
+        </a>
+    </div>
+
+    <div class="header-right">
+        <nav class="admin-nav">
+            <a href="restaurants.html" class="nav-item">Restaurants</a>
+            <a href="cuisine.html" class="nav-item">Cuisine</a>
+            <a href="users.html" class="nav-item">Users</a>
+            <a href="report.html" class="nav-item">Report</a>
+        </nav>
+
+        <button onclick="handleLogout()" class="btn-logout">Đăng xuất</button>
+    </div>
+</header>
+
+<div class="list-container">
+    <h2>Cuisine</h2>
+
+    <button class="btn-add" onclick="openAddModal()">+ Thêm Mới</button>
+
+    <table class="list-header">
+        <thead>
+        <tr class="table-header">
+            <th class="col-id">Cuisine ID</th>
+            <th class="col-info">Cuisine Name</th>
+            <th class="col-status">Status</th>
+            <th class="col-action">Thao tác</th>
+        </tr>
+        </thead>
+
+        <tbody id="cuisine-list-body">
+        </tbody>
+    </table>
+</div>
+
+<div id="cuisineModal" class="modal">
+    <div class="modal-content">
+        <h3 id="modal-title">Cuisine</h3>
+        <input type="hidden" id="form-id">
+        <div class="form-group">
+            <label for="form-name">Cuisine Name:</label>
+            <input type="text" id="form-name" placeholder="Nhập tên món...">
+        </div>
+
+        <div class="form-group">
+            <label for="form-status">Status:</label>
+            <select id="form-status">
+                <option value="Hoạt động">Hoạt động</option>
+                <option value="Ngưng hoạt động">Ngưng hoạt động</option>
+            </select>
+        </div>
+
+        <div class="modal-actions">
+            <button id="btn-submit" class="btn-submit">Lưu thay đổi</button>
+            <button onclick="closeModal()" class="closeModal">Hủy</button>
+        </div>
+
+    </div>
+</div>
+
+<script src="../../static/js/admin_cuisine.js"></script>
+</body>
+</html>

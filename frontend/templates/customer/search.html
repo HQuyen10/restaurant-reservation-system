@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm nhà hàng</title>
+
+    <link rel="stylesheet" href="../../static/css/customer.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">GOLDEN <span>HARVEST</span></div>
+</div>
+
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="main-layout">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <a href="home.html">🏠 Trang chủ</a>
+            <a href="search.html">🔍 Tìm kiếm</a>
+            <a href="booking.html">📅 Đặt bàn</a>
+            <a href="history.html" id="historyLink" style="display:none;">📜 Lịch sử</a>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <h2>Tìm kiếm nhà hàng</h2>
+
+            <input id="address" placeholder="Tìm kiếm nhà hàng...">
+
+            <select id="cuisine">
+                <option value="">Loại hình ẩm thực</option>
+                <option value="1">Lẩu</option>
+                <option value="2">Nướng</option>
+                <option value="3">Hải sản</option>
+                <option value="4">Chay</option>
+                <option value="5">Hấp</option>
+            </select>
+
+            <button onclick="search()">Tìm kiếm</button>
+
+            <div id="result"></div>
+
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { search, goMenu, goBooking, initPage } from "../../static/js/cus_search.js";
+
+    window.search = search;
+    window.goMenu = goMenu;
+    window.goBooking = goBooking;
+
+    window.onload = initPage;
+</script>
+
+</body>
+</html>

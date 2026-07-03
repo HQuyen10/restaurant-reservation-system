@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý bàn</title>
+    <link rel="stylesheet" href="../../static/css/restaurant.css">
+    <link rel="stylesheet" href="../../static/css/admin.css">
+    <link rel="stylesheet" href="../../static/css/comfirmbooking.css">
+</head>
+<body>
+<div class="container">
+    <div class="sidebar">
+        <h2>🍽️ Restaurant</h2>
+        <a href="table.html" class="active">Quản lý bàn</a>
+        <a href="comfirmbooking.html">Đơn đặt bàn</a>
+        <a href="menu_mgmt.html">Menu</a>
+        <a href="register_restaurant.html">Đăng ký nhà hàng</a>
+        <div class="sidebar-bottom">
+            <button onclick="handleLogout()" class="logout-btn">
+                Đăng xuất
+            </button>
+        </div>
+    </div>
+
+    <div class="main">
+        <div id="restaurant-page-message" class="staff-restaurant-message" hidden></div>
+
+        <section id="table-management-panel" class="staff-restaurant-panel">
+            <div class="topbar">
+                <h2>Quản lý bàn</h2>
+                <button type="button" onclick="addTable()">+ Thêm bàn</button>
+            </div>
+
+            <div class="tables-container">
+                <div class="side" id="left-side"></div>
+                <div class="side" id="right-side"></div>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+
+<script src="../../static/js/restaurant_table.js"></script>
+<script>
+function goToOrder(tableId) {
+    window.location.href = `order.html?table_id=${tableId}`;
+}
+</script>
+</body>
+</html>

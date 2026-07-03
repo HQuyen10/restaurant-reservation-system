@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Đặt bàn</title>
+
+    <link rel="stylesheet" href="../../static/css/customer.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+    <div class="logo">GOLDEN <span>HARVEST</span></div>
+</div>
+
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="main-layout">
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <a href="home.html">🏠 Trang chủ</a>
+            <a href="search.html">🔍 Tìm kiếm</a>
+            <a href="booking.html">📅 Đặt bàn</a>
+            <a href="history.html" id="historyLink" style="display:none;">📜 Lịch sử</a>
+
+        </div>
+        <!-- CONTENT -->
+        <div class="content">
+            <h2>Đặt bàn</h2>
+            <select id="restaurantSelect" onchange="changeRestaurant(this.value)">
+                <option value="">-- Chọn nhà hàng --</option>
+            </select>
+
+            <p>Giờ hoạt động:
+                <span id="openTime"></span> -
+                <span id="closeTime"></span>
+            </p>
+
+            <input id="nameInput" placeholder="Họ tên"><br>
+            <input id="phoneInput" placeholder="SĐT"><br>
+            <input id="dateInput" type="date"><br>
+            <input id="timeInput" type="time"><br>
+            <input id="peopleInput" type="number" placeholder="Số người"><br>
+            <textarea id="noteInput" placeholder="Ghi chú"></textarea><br>
+
+            <button onclick="check()">Kiểm tra bàn</button>
+
+            <h3>Bàn trống</h3>
+            <div id="tables"></div>
+
+            <!-- PAYMENT -->
+            <div id="paymentBox" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <span class="close-btn" onclick="closePayment()">×</span>
+
+                    <h3>Thanh toán</h3>
+                    <p>Mã đơn: <span id="resId"></span></p>
+                    <p>Tên: <span id="cusName"></span></p>
+                    <p>SĐT: <span id="cusPhone"></span></p>
+                    <p>Ngày: <span id="cusDate"></span></p>
+                    <p>Giờ: <span id="cusTime"></span></p>
+                    <p>Số người: <span id="cusPeople"></span></p>
+                    <p>Tiền cọc: <b id="depositText"></b></p>
+
+                    <img id="qrImg" width="200">
+
+                    <br><br>
+                    <button onclick="confirmPayment()">Đã chuyển khoản</button>
+                </div>
+            </div>
+
+            <!-- SUCCESS -->
+            <div id="successBox" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <h3 style="color: green;">Đặt bàn thành công!</h3>
+                    <button onclick="goHome()">Quay về trang chủ</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import * as booking from "../../static/js/cus_booking.js";
+
+    window.onload = booking.initPage;
+
+    Object.assign(window, booking);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f5f5f5;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1f2a36;
+    color: #ecf0f1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.sidebar a {
+    display: block;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin-bottom: 10px;
+    color: #bdc3c7;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hiệu ứng Hover */
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #3498db;
+    border-color: #3498db;
+    transform: translateX(5px);
+}
+
+/* Nút Active */
+.sidebar a.active {
+    background-color: #3498db;
+    color: #ffffff;
+    border-color: #3498db;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+/* Main */
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Topbar */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.tables-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cột */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+
+.side {
+    display: contents;
+}
+
+/* Card */
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    transition: 0.25s;
+    position: relative; /* Thêm để định vị icon xóa */
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* icon */
+.icon {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+/* Status */
+.available {
+    border: 2px solid green;
+}
+
+.reserved {
+    border: 2px solid red;
+}
+
+
+.card.double {
+    grid-column: span 2;
+}
+
+/* Buttons */
+button {
+    padding: 6px 12px;
+    margin: 5px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+
+.actions {
+    display: flex;
+    justify-content: space-between; /* Sửa trái - Hủy phải */
+    gap: 10px;
+}
+
+.actions button {
+    flex: 1; /* 2 nút đều nhau */
+}
+
+/* màu cho đẹp */
+.actions button:first-child {
+    background: #4CAF50; /* Sửa */
+    color: white;
+}
+
+.actions button:last-child {
+    background: #f44336; /* Hủy */
+    color: white;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #34495e;
+    color: white;
+}
+.logout-btn {
+    width: 100%;
+    padding: 10px;
+    background: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: #d9363e;
+}
+
+/* Nút Xóa bàn */
+.delete-icon {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ccc;
+    transition: color 0.3s, transform 0.2s;
+    z-index: 10;
+}
+
+.delete-icon:hover {
+    color: #f44336;
+    transform: scale(1.2);
+}
+
+/* Highlight đơn đặt bàn mới nhất */
+.new-booking {
+    background-color: #e3f2fd !important; /* Màu xanh nhạt nổi bật */
+    border-left: 4px solid #2196f3;
+    animation: highlightFade 3s ease-in-out;
+}
+
+@keyframes highlightFade {
+    0% { background-color: #bbdefb; }
+    100% { background-color: #e3f2fd; }
+}

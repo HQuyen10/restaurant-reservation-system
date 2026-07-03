@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lịch sử đặt bàn</title>
+
+    <link rel="stylesheet" href="../../static/css/customer.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">GOLDEN <span>HARVEST</span></div>
+</div>
+
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="main-layout">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <a href="home.html">🏠 Trang chủ</a>
+            <a href="search.html">🔍 Tìm kiếm</a>
+            <a href="booking.html">📅 Đặt bàn</a>
+            <a href="history.html" id="historyLink" style="display:none;">📜 Lịch sử</a>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+
+            <h2> Lịch sử đặt bàn</h2>
+
+            <div class="toolbar">
+                <input id="searchInput" placeholder="🔍 Tìm theo tên hoặc mã...">
+
+                <select id="statusFilter">
+                    <option value="">Tất cả</option>
+                    <option value="Pending">Pending</option>
+                    <option value="Confirmed">Confirmed</option>
+                    <option value="Cancelled">Cancelled</option>
+                </select>
+            </div>
+
+            <div id="historyContainer" class="history-grid"></div>
+
+            <button class="btn btn-closehst" onclick="goHome()"> Đóng</button>
+
+            <!-- REVIEW POPUP -->
+            <div id="reviewBox" class="popup" style="display:none;">
+                <div class="popup-content">
+                    <h3>⭐ Đánh giá</h3>
+
+                    <input type="hidden" id="restaurantId">
+                    <input type="hidden" id="reservationId">
+
+                    <label>Rating:</label>
+                    <input type="number" id="rating" min="1" max="5">
+
+                    <label>Nhận xét:</label>
+                    <textarea id="comment"></textarea>
+
+                    <br><br>
+                    <button onclick="submitReview()">Gửi</button>
+                    <button onclick="closeReview()">Đóng</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import * as history from "../../static/js/cus_history.js";
+
+    window.onload = history.initPage;
+
+    Object.assign(window, history);
+</script>
+
+</body>
+</html>

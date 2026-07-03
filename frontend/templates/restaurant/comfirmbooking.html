@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý đặt bàn</title>
+    <link rel="stylesheet" href="../../static/css/restaurant.css">
+    <link rel="stylesheet" href="../../static/css/admin.css">
+    <link rel="stylesheet" href="../../static/css/comfirmbooking.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>🍽️ Restaurant</h2>
+            <a href="table.html">Quản lý bàn</a>
+            <a href="comfirmbooking.html" class="active">Đơn đặt bàn</a>
+            <a href="menu_mgmt.html">Menu</a>
+            <a href="register_restaurant.html">Đăng ký nhà hàng</a>
+            <div class="sidebar-bottom">
+                <button onclick="handleLogout()" class="logout-btn">
+                    Đăng xuất
+                </button>
+            </div>
+        </div>
+
+        <!-- MAIN -->
+        <div class="main">
+            <h2>Danh sách đặt bàn</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tên khách</th>
+                        <th>SĐT</th>
+                        <th>Số người</th>
+                        <th>Ngày</th>
+                        <th>Giờ</th>
+                        <th>Bàn</th>
+                        <th>Tiền cọc</th>
+                        <th>Trạng thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+
+                <tbody id="booking-list"></tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="../../static/js/res_confirmbooking.js"></script>
+
+</body>
+
+</html>

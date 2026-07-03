@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" href="../../static/css/customer.css">
+</head>
+<body>
+
+<button onclick="goHome()">Đóng</button>
+<h2>Menu nhà hàng</h2>
+
+<div id="menu" class="menu-grid"></div>
+
+<button onclick="goBooking()">Đặt bàn</button>
+<script src="../../static/js/menu_data.js"></script>
+<script type="module">
+    import { renderMenu, goBooking, goHome } from "../../static/js/cus_menu.js";
+
+    window.goBooking = goBooking;
+    window.goHome = goHome;
+
+    renderMenu();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+cd d:\restaurantbooking\backend# Frontend
+node_modules/
+
+# Backend (Python)
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# IDE & Tools
+.idea/
+.vscode/
+temp-debug-*
+*.txt
+
+.agent/*
+.github/prompts/
+
+# Jest coverage
+coverage/
+.coverage
+htmlcov/
+coverage.xml
+# npm log
+npm-debug.log*
+**/package-lock.json
+# Playwright
+playwright-report/
+test-results/
+blob-report/

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Nhà Hàng</title>
+    <link rel="stylesheet" href="../../static/css/restaurant.css">
+    <link rel="stylesheet" href="../../static/css/admin.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h2>🍽️ Restaurant</h2>
+            <a href="table.html">Quản lý bàn</a>
+            <a href="comfirmbooking.html">Đơn đặt bàn</a>
+            <a href="menu_mgmt.html" class="active">Menu</a>
+            <a href="register_restaurant.html">Đăng ký nhà hàng</a>
+            <div class="sidebar-bottom">
+                <button onclick="handleLogout()" class="logout-btn">
+                    Đăng xuất
+                </button>
+            </div>
+        </div>
+        </head>
+
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <div id="restaurant-page-message" class="staff-restaurant-message" hidden></div>
+
+            <div class="topbar">
+                <h1>Menu Nhà Hàng</h1>
+                <button class="btn-add" onclick="toggleAddForm()">+ Thêm món mới</button>
+            </div>
+
+            <!-- ===== THÊM MÓN (ẨN MẶC ĐỊNH) ===== -->
+            <div id="addFoodForm" class="add-food-container" style="display: none;">
+                <h3>Thêm món mới</h3>
+                <div class="input-group">
+                    <input id="name" placeholder="Tên món">
+                    <input id="price" type="number" placeholder="Giá">
+                    <input id="image" placeholder="Link ảnh">
+                    <input id="category" placeholder="Loại (lau, nuong...)">
+                    <button class="btn-add" onclick="addFood()">Thêm món</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <input type="file" id="editImageInput" style="display:none" accept="image/*">
+            <div class="menu-container" id="menuContainer"></div>
+        </div>
+    </div>
+
+    <script src="../../static/js/res_menu_mgmt.js"></script>
+
+</body>
+
+</html>

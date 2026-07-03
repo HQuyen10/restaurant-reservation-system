@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="../../static/css/customer.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="logo">GOLDEN <span>HARVEST</span></div>
+
+    <div class="auth-buttons" id="authButtonsBox">
+        <button onclick="window.location.href='../auth/login.html'">Đăng nhập</button>
+        <button onclick="window.location.href='../auth/register.html'">Đăng ký</button>
+    </div>
+</div>
+
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="main-layout">
+        <div class="sidebar">
+            <h2></h2>
+            <a href="home.html">🏠 Trang chủ</a>
+            <a href="search.html">🔍 Tìm kiếm</a>
+            <a href="booking.html">📅 Đặt bàn</a>
+            <a href="history.html" id="historyLink" style="display:none;">📜 Lịch sử</a>
+            <a href="#" onclick="logout()" id="logoutBtn" style="display:none;">🚪 Đăng xuất</a>
+        </div>
+
+        <div class="content">
+            <h2>Trang chủ</h2>
+
+            <div class="dashboard">
+                <div class="card">
+                    <h3>🍽️ Nhà hàng</h3>
+                    <p>Tìm kiếm và xem menu nhà hàng dễ dàng</p>
+                    <a href="search.html" class="btn">Tìm kiếm</a>
+                </div>
+
+                <div class="card">
+                    <h3>📅 Đặt bàn</h3>
+                    <p>Đặt bàn nhanh chóng chỉ trong vài bước</p>
+                    <a href="booking.html" class="btn">Đặt ngay</a>
+                </div>
+
+                <div class="card" id="historyCard" style="display:none;">
+                    <h3>📜 Lịch sử</h3>
+                    <p>Xem lại các lần đặt bàn trước đó</p>
+                    <a href="history.html" class="btn">Xem lịch sử</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module">
+    import { checkLogin, logout } from "../../static/js/cus_home.js";
+
+    window.onload = checkLogin;
+    window.logout = logout;
+</script>
+
+</body>
+</html>
